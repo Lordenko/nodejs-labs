@@ -17,7 +17,7 @@ export const processor = async (params: ProcessorParams): Promise<number[]> => {
     return batch.map(n => n * 2);
 };
 
-export const processInBatches = async (params: ProcessInBatchesParams) => {
+export const processInBatches = async (params: ProcessInBatchesParams): Promise<number[]> => {
     const { batchSize, items, processor } = params
 
     const totalBatchs: number = Math.ceil(items.length / batchSize)
